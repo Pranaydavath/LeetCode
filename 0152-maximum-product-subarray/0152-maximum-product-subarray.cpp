@@ -3,25 +3,17 @@ public:
     int maxProduct(vector<int>& v) {
         int n=v.size();
         if(n==1)return v[0];
-        int p=1;
-        int pre=1,suf=1,mx1=0,mx2=0,ans;
-        for(int i=0;i<n;i++){
-            pre*=v[i];
-            mx1=max(mx1,pre);
-            if(v[i]==0){
-                pre=1;
-            }
-            
+        int mx=0,pro=1;
+    for(int i=0;i<n;i++){
+        pro=1;
+        // mx=max(mx,pro);
+        for(int j=i;j<n;j++){
+            pro*=v[j];
+            // if(pro<=0)pro=0;
+            mx=max(mx,pro);
         }
-         for(int i=n-1;i>=0;i--){
-            suf*=v[i];
-            mx2=max(mx2,suf);
-            if(v[i]==0){
-                suf=1;
-            }
-        }
-        ans=max(mx1,mx2);
-        
-        return ans;
     }
+      return mx;
+    }
+    
 };
