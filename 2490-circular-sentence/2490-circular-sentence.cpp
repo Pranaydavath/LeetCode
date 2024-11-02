@@ -21,16 +21,15 @@ public:
         }
         else{
            for(int i=1;i<n;i++){
-               int x=res[i].size();
                int y=res[i-1].size();
                if(res[i][0]!=res[i-1][y-1])return false;
            }
             if(res[0][0]==res[n-1][res[n-1].size()-1])return true;
-        return false;
+            return false;
         }
-        // for(int i=0;i<res.size();i++){
-        //     cout<<res[i]<<endl;
-        // }
+        for(int i=0;i<res.size();i++){
+            cout<<res[i]<<endl;
+        }
        
     }
 };
