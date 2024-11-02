@@ -22,9 +22,12 @@ public:
         else{
            for(int i=1;i<n;i++){
                int y=res[i-1].size();
-               if(res[i][0]!=res[i-1][y-1])return false;
+               string p=res[i],q=res[i-1];
+               if(p[0]!=q[y-1])return false;
            }
-            if(res[0][0]==res[n-1][res[n-1].size()-1])return true;
+            string h=res[0],o=res[n-1];
+            int z=res[n-1].size();
+            if(h[0]==o[z-1])return true;
             return false;
         }
         for(int i=0;i<res.size();i++){
