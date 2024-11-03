@@ -1,12 +1,14 @@
 class Solution {
 public:
     bool rotateString(string s, string tar) {
-        int x=s.size();
-        s+=s;
         int n=s.size();
-        for(int i=0;i<n-x;i++){
-            if(s.substr(i,x)==tar)return true;
-        }
-        return false;
+       for(int i=0;i<n;i++){
+           char lc=s.back();
+           s.pop_back();
+           s.insert(s.begin(),lc);
+           cout<<s<<endl;
+           if(s==tar)return true;
+       }
+    return false;
     }
 };
